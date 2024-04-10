@@ -14,7 +14,7 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.util.List;
 @WebServlet({"/toys.xls", "/toys.html", "/toys"})
-public class StudentXLS extends HttpServlet {
+public class ToyXLS extends HttpServlet {
     public ToyRepositoryFilesImpl toy;
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException,
@@ -28,7 +28,7 @@ public class StudentXLS extends HttpServlet {
             boolean esXls = servletPath.endsWith(".xls");
             if (esXls) {
                 resp.setContentType("application/vnd.ms-excel");
-                resp.setHeader("Content-Disposition", "attachment;filename=students.xls");
+                resp.setHeader("Content-Disposition", "attachment;filename=toys.xls");
             }
             try (PrintWriter out = resp.getWriter()) {
                 if (!esXls) {
@@ -40,7 +40,7 @@ public class StudentXLS extends HttpServlet {
                     out.println(" </head>");
                     out.println(" <body>");
                     out.println(" <h1>Student List!</h1>");
-                    out.println("<p><a href=\"" + req.getContextPath() + "/students.xls" + "\">exportar a xls < / a ></p > ");
+                    out.println("<p><a href=\"" + req.getContextPath() + "/toys.xls" + "\">exportar a xls < / a ></p > ");
                 }
                 out.println("<table>");
                 out.println("<tr>");

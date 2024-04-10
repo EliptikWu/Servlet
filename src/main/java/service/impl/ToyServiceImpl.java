@@ -4,6 +4,7 @@ import dtos.ToyDto;
 import mapping.ToyMapper;
 import model.Category;
 import model.Toy;
+import repository.Repository;
 import repository.ToyRepository;
 import repository.ToyRepositoryImpl.ToyRepositoryImpl;
 import service.ToyService;
@@ -16,6 +17,7 @@ import java.util.stream.Collectors;
 
 public class ToyServiceImpl implements ToyService {
     static List<ToyDto> toys;
+    private Repository<ToyDto> repo;
 
     public ToyServiceImpl() {
         ToyRepository repoCustomer = new ToyRepositoryImpl();

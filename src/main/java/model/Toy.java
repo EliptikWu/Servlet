@@ -10,7 +10,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @ToString
 @Builder
-public class Toy implements Serializable {
+public class    Toy implements Serializable {
 
     private Long id;
     private String name;
